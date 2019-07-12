@@ -1,0 +1,27 @@
+// FILE			: 01_Two_Sum.js
+// AUTHOR		: K.Supasan
+// CREATE ON	: 2019, July 10 (UTC+0)
+
+// README
+
+// REFERENCE
+//  ref00   : https://leetcode.com/problems/jewels-and-stones/
+//  ref01   : https://flaviocopes.com/how-to-initialize-array-with-values/
+
+var numJewelsInStones = funstion( J , S )
+{
+    const jewels = new Array( 128 ).fill( false );
+    for( let run = 0 ; run < J.length ; run++ )
+    {
+        jewels[ J.charCodeAt( run ) ] = true;
+    }
+    let answer = 0;
+    for( let run = 0 ; run < S.length ; run++ )
+    {
+        if( jewels[ S.charCodeAt( run ) ] )
+        {
+            answer+= 1;
+        }
+    }
+    return answer;
+};

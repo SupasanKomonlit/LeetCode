@@ -1,0 +1,46 @@
+// FILE			: 0088_Merge_Sorted_array.js
+// AUTHOR		: K.Supasan
+// CREATE ON	: 2019, July 11 (UTC+0)
+
+// README
+
+// REFERENCE
+//  ref00   : https://leetcode.com/problems/merge-sorted-array/
+//  ref01   : https://www.w3schools.com/jsref/jsref_shift.asp
+
+var merge = function( nums1 , m , nums2 , n )
+{
+    let answer = [];
+    const target_length = 0;
+    target_length = m+n;
+    for( answer.length < target_length )
+    {
+        if( m > 0 && n > 0 )
+        {
+            if( nums1[0] > nums2[0] )
+            {
+                n--;
+                answer.push( nums2.shift() );
+            }
+            else
+            {
+                m--;
+                answer.push( nums1.shift() );
+            }
+        }
+        else if( m > 0 )
+        {
+            m--;
+            answer.push( nums1.shift() );
+        }
+        else if( n > 0 )
+        {
+            n--;
+            answer.push( nums2.shift() );
+        }
+        else
+        {
+            break;
+        }
+    }
+}
